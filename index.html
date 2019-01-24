@@ -1,1 +1,199 @@
-Let's begin
+<html>
+
+<head>
+    <title>Survey Form</title>
+    <style>
+        *{
+            border-radius: 10px;
+        }
+        body{
+            text-align: center;
+            color: #011638;
+            font-family: 'Raleway', Helvetica, sans-serif;
+            background-color: rgb(4, 0, 255);
+        }
+        div{
+            display: block;
+        }
+        #title{
+            color: white;
+        }
+        #form-layout{
+            background-color: rgb(255, 255, 255);
+            width: 80%;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        .inputSide {
+            display: inline-block;
+            text-align: left;
+            width: 48%;
+            vertical-align: middle;
+        }
+        .labelSide {
+            display: inline-block;
+            text-align: right;
+            width: 42%;
+            padding: 5px;
+            vertical-align: middle;
+        }
+        .input-field {
+            height: 35px;
+            width: 280px;
+            padding: 5px;
+            margin: 10px;
+            border: 1px solid #c0c0c0;
+        }
+
+        #submit {
+            background-color: rgb(78, 175, 255);
+            color: white;
+            font-size: 1em;
+            height: 40px;
+            width: 96px;
+            margin: 10px;
+            border: 0px solid;
+        }
+        .dropdown {
+            height: 35px;
+            width: 140px;
+            padding: 5px;
+            margin: 10px;  
+            margin-top: 15px;
+            border: 1px solid #c0c0c0;
+        }
+        .radio, .checkbox {
+            position: relative;
+            left: -43px;
+            margin-left: 10px;
+            display: block;
+            padding-bottom: 10px;
+        }
+
+        .leftFloat{
+            float: left;
+            margin-right: 5px;
+        }
+
+        #textarea{
+            height: 100px;
+            width: 280px;
+            padding: 5px;
+            margin: 10px;
+            border: 1px solid #c0c0c0;
+        }
+
+        @media screen and (max-width: 833px) {
+            .input-field {
+                width: 80%;
+            }
+            select {
+                width: 90%;
+            }
+        }
+
+        @media screen and (max-width: 520px) {
+            .labels {
+                width: 100%;
+                text-align: left;
+            }
+            .rightTab {
+                width: 80%;
+                float: left;
+            }
+            .input-field {
+                width: 100%;
+            }
+            select {
+                width: 100%;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body>
+    <h1 id="title">Survey Form</h1>
+    <div id="form-layout">
+        <p id="description">Please enter your details in the form below</p>
+        <form id="survey-form">
+            <div class="rowTab">
+                <div class="labelSide">
+                    <label id="name-label" for="name">Name: </label>
+                </div>
+                <div class="inputSide">
+                    <input autofocus type="text" name="name" id="name" class="input-field" placeholder="Enter your name"
+                        required>
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labelSide">
+                    <label id="email-label" for="email">Email: </label>
+                </div>
+                <div class="inputSide">
+                    <input type="email" name="email" id="email" class="input-field" required placeholder="Enter your Email">
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labelSide">
+                    <label id="number-label" for="age">Age: </label>
+                </div>
+                <div class="inputSide">
+                    <input type="number" min="18" max="120" name="age" id="number" class="input-field" required
+                        placeholder="Enter your age">
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labelSide">
+                    <label for="currentPos">What's your work status?</label>
+                </div>
+                <div class="inputSide">
+                    <select id="dropdown" name="currentPos" class="dropdown">
+                        <option value="student">Student</option>
+                        <option value="full-time">Full time</option>
+                        <option value="part-time">Part time</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labelSide">
+                    <label for="like">Do you like the colour blue?</label>
+                </div>
+                <div class="inputSide">
+                    <ul style="list-style: none;">
+                        <li class="radio"><label>Yes<input type="radio" value="yes" name="like" class="leftFloat"></label></li>
+                        <li class="radio"><label>No<input type="radio" value="no" name="like" class="leftFloat"></label></li>
+                        <li class="radio"><label>Prefer not to say<input type="radio" value="not-preferred" name="like" class="leftFloat"></label></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labelSide">
+                    <label for="animals">Which are your favourite animals?</label>
+                </div>
+                <div class="inputSide">
+                    <ul style="list-style: none">
+                        <li class="checkbox"><input type="checkbox" name="animals" value="cat" class="leftFloat">Cats</li>
+                        <li class="checkbox"><input type="checkbox" name="animals" value="dog" class="leftFloat">Dogs</li>
+                        <li class="checkbox"><input type="checkbox" name="animals" value="elephant" class="leftFloat">Elephants</li>
+                        <li class="checkbox"><input type="checkbox" name="animals" value="giraffe" class="leftFloat">Giraffes</li>
+                        <li class="checkbox"><input type="checkbox" name="animals" value="monkey" class="leftFloat">Monkeys</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rowTab">
+                <div class="labelSide">
+                    <label id="text-label" for="textarea">Please add any other comments you like:</label>
+                </div>
+                <div class="inputSide">
+                    <textarea name="textarea" id="textarea"></textarea>
+                </div>
+            </div>
+            <button id="submit" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</html>
